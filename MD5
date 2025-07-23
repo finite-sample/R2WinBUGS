@@ -1,4 +1,4 @@
-958e6e4c0ebbb22dbca8dbafa90e2234 *DESCRIPTION
+043769c83de17ca1ba9eef17851e7db1 *DESCRIPTION
 0d35d369c83a607949c3f46104b3b212 *NAMESPACE
 de00e8dd7bfec0ed741089377ef2ab7f *R/00.R
 c6e2fac4bd4c53eee794461c93091017 *R/as.bugs.array.R
@@ -25,12 +25,12 @@ e239f26029b8d0f2db892e11a32beb89 *R/print.bugs.R
 3f761d597adba4f627a4bc251383a79b *R/wineutils.R
 efd33b6a49c441f37e25ba137cf1dc31 *R/write.datafile.R
 3fd7cffb098d6e2b3c6789d1d6130d07 *R/write.model.R
-9c119e262779186ac0111fba57469379 *build/vignette.rds
-aae2a47d3a16dfaa2d6289c288570a2f *data/schools.txt.gz
+52ec2b7ff0474a1ecdaf7d74abad26e5 *build/vignette.rds
+374ed2547ef4632c67d43698cc7fdd31 *data/schools.txt.gz
 1a0cfb75949184c7b4399a15b73c8d80 *inst/CITATION
 28b5bb68e5dd293eb1013ebec4b763b5 *inst/NEWS
 932cd365a4fd5b1552dcb7e987053d84 *inst/doc/R2WinBUGS.Rnw
-94d59c78600b477ef817bf915b6f701a *inst/doc/R2WinBUGS.pdf
+c44806a7b710e037b0254c52718e4d17 *inst/doc/R2WinBUGS.pdf
 d0fcdd40339f64611177e97cdfb04ca4 *inst/model/schools.txt
 4e9ebd6ba570ba578ee44d21011e78ba *man/R2WinBUGS-package.Rd
 20dce1602ab94519483352c66886361f *man/as.bugs.array.Rd
@@ -46,7 +46,7 @@ ce263749fd8409b8e67b4243190b65c5 *man/bugs.script.Rd
 2633987335b9a47907a4514d6c031461 *man/bugs.update.settings.Rd
 a7e33aaafc9c6eb2eb85ae1c475c4c1d *man/decode.parameter.name.Rd
 ab70959b4145b8cc4796eceadae43730 *man/monitor.Rd
-61de27bb1303f870ac263aee54a8ebd7 *man/openbugs.Rd
+2c90185bb72f984fbc6d975ddc4641bd *man/openbugs.Rd
 925314ec61625f7adfc29e86955f799a *man/plot.bugs.Rd
 cd123d6291d4840168e619618a14b9b0 *man/print.bugs.Rd
 943bc0d920165718ab2b74712e806e87 *man/read.bugs.Rd

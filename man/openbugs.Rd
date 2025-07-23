@@ -3,8 +3,8 @@
 \title{Wrapper to run OpenBUGS}
 \description{The \code{openbugs} function takes data and starting values
   as input.  It automatically calls the package \pkg{BRugs} and runs
-  something similar to \code{\link[BRugs]{BRugsFit}}.  Not available in
-  S-PLUS.}
+  something similar to the \code{BRugsFit()} function in \pkg{BRugs}.
+  Not available in S-PLUS.}
 
 \usage{
 openbugs(data, inits, parameters.to.save,
