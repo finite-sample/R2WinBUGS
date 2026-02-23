@@ -1,7 +1,7 @@
 Package: R2WinBUGS
 Title: Running 'WinBUGS' and 'OpenBUGS' from 'R' / 'S-PLUS'
-Date: 2025-07-23
-Version: 2.1-23
+Date: 2026-02-23
+Version: 2.1-24
 Authors@R: c(person(given = "Andrew",
                         family = "Gelman",
                         role = "aut",
@@ -39,7 +39,7 @@ SystemRequirements: OpenBugs for functions bugs() and openbugs() or
         WinBUGS 1.4 for function bugs()
 License: GPL-2
 NeedsCompilation: no
-Packaged: 2025-07-23 14:17:13 UTC; ligges
+Packaged: 2026-02-23 13:51:10 UTC; ligges
 Author: Andrew Gelman [aut],
   Sibylle Sturtz [aut],
   Uwe Ligges [cre, aut],
@@ -48,4 +48,4 @@ Author: Andrew Gelman [aut],
   Insightful Corp. [ctb] (Port to S-PLUS)
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 Repository: CRAN
-Date/Publication: 2025-07-23 15:00:08 UTC
+Date/Publication: 2026-02-23 17:00:24 UTC
