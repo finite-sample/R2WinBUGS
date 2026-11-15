@@ -3,7 +3,7 @@
 ## Repository and documentation
 
 - The package now lives at <https://github.com/finite-sample/R2WinBUGS>, with
-  a README and a pkgdown site at <https://finite-sample.github.io/R2WinBUGS/>.
+  a README and a pkgdown site.
 - The change log moved from `inst/NEWS` to this `NEWS.md`, one section per
   release.
 - The vignette and the code use US English (`Language: en-US`).
