@@ -1,6 +1,30 @@
 Changes to R2WinBUGS:
 =====================
 
+Update 2.1-24
+- conv.par() no longer stops with "missing value where TRUE/FALSE needed"
+  when the within-chain variance W is NA; such parameters are treated as
+  degenerate (Rhat and n.eff set to 1) in monitor() and the bugs() summary
+- vignette: URL updates
+
+Update 2.1-23
+- DESCRIPTION: authors given via Authors@R; version requirement on BRugs
+  dropped from Suggests, and Description notes that BRugs is only available
+  from the CRAN archive
+- documentation fix in ?openbugs (no longer links to BRugs help page)
+
+Update 2.1-22.1
+- the package defines its own internal is.R() returning TRUE; S-PLUS branches
+  removed from bugs.plot.summary() and from the write.model() example
+- non-maintainer update packaged by the CRAN team
+
+Update 2.1-22
+- attach.bugs() checks its argument with inherits(x, "bugs") instead of
+  class(x) != "bugs", so objects with more than one class work
+- CITATION converted to bibentry() and now gives the JSS DOI
+- documentation fixes in ?bugs and ?bugs.inits (argument name inits.files)
+- DESCRIPTION: removed Dialect field
+
 Update 2.1-20/21
 - various URL fixes, DESCRIPTION file updates
 - import from base packages
