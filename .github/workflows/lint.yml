@@ -11,4 +11,6 @@ permissions:
 
 jobs:
   lint:
-    uses: gojiplus/r-canon/.github/workflows/reusable-lint.yml@v2
+    uses: gojiplus/r-canon/.github/workflows/reusable-lint.yml@lint-coverage-extra-packages
+    with:
+      extra-packages: BRugs=?ignore

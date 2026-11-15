@@ -8,6 +8,8 @@ on:
 
 jobs:
   coverage:
-    uses: gojiplus/r-canon/.github/workflows/reusable-coverage.yml@v2
+    uses: gojiplus/r-canon/.github/workflows/reusable-coverage.yml@lint-coverage-extra-packages
+    with:
+      extra-packages: BRugs=?ignore
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
