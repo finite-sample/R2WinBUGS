@@ -46,3 +46,5 @@ Author: Andrew Gelman [aut],
   Jouni Kerman [ctb],
   Insightful Corp. [ctb] (Port to S-PLUS)
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
+URL: https://github.com/finite-sample/R2WinBUGS
+BugReports: https://github.com/finite-sample/R2WinBUGS/issues
