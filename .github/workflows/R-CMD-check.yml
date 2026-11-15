@@ -11,6 +11,6 @@ jobs:
     uses: gojiplus/r-canon/.github/workflows/reusable-check.yml@feat/tinytex-input
     with:
       tinytex: true
-      tinytex-packages: a4wide
+      tinytex-packages: a4wide ntgclass ae thumbpdf upquote fancyvrb natbib lm psnfss url
       # BRugs (Suggests) is no longer on CRAN; pak cannot solve with it
       extra-packages: any::rcmdcheck, BRugs=?ignore
