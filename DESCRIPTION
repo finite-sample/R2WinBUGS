@@ -33,7 +33,8 @@ Description: Invoke a 'BUGS' model in 'OpenBUGS' or 'WinBUGS', a class "bugs" fo
   see <https://cran.r-project.org/package=BRugs>.
 Depends: R (>= 2.13.0), coda (>= 0.11-0), boot
 Imports: utils, stats, graphics
-Suggests: BRugs
+Suggests: BRugs, testthat (>= 3.0.0), withr
+Config/testthat/edition: 3
 SystemRequirements: OpenBugs for functions bugs() and openbugs() or
         WinBUGS 1.4 for function bugs()
 License: GPL-2
