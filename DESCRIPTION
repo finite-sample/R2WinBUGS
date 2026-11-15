@@ -1,7 +1,6 @@
 Package: R2WinBUGS
 Title: Running 'WinBUGS' and 'OpenBUGS' from 'R' / 'S-PLUS'
-Date: 2026-02-23
-Version: 2.1-24
+Version: 2.1-24.9000
 Authors@R: c(person(given = "Andrew",
                         family = "Gelman",
                         role = "aut",
@@ -48,3 +47,4 @@ Author: Andrew Gelman [aut],
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 URL: https://github.com/finite-sample/R2WinBUGS
 BugReports: https://github.com/finite-sample/R2WinBUGS/issues
+Language: en-US

@@ -9,3 +9,11 @@ on:
 jobs:
   check:
     uses: gojiplus/r-canon/.github/workflows/reusable-check.yml@v2
+    with:
+      # BRugs (Suggests, needed only by openbugs()) is archived on CRAN.
+      extra-packages: "any::rcmdcheck, BRugs=?ignore"
+      # The Sweave vignette needs LaTeX, and texi2pdf does not fetch missing
+      # LaTeX packages on demand. The list is what pdflatex -recorder shows
+      # the vignette opening, less what TinyTeX ships.
+      tinytex: true
+      tinytex-packages: a4wide ae auxhook bigintcalc bitset etoolbox fancyvrb gettitlestring grfext hycolor hyperref iftex infwarerr intcalc kvdefinekeys kvoptions kvsetkeys letltxmacro lm ltxcmds natbib ntgclass pdfescape pdftexcmds psnfss refcount rerunfilecheck stringenc thumbpdf tools uniquecounter upquote url
