@@ -12,3 +12,5 @@ jobs:
     with:
       tinytex: true
       tinytex-packages: a4wide
+      # BRugs (Suggests) is no longer on CRAN; pak cannot solve with it
+      extra-packages: any::rcmdcheck, BRugs=?ignore
