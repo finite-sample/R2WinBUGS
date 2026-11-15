@@ -6,7 +6,8 @@
   internal use.}
 
 \usage{
-bugs.data(data, dir = getwd(), digits = 5, data.file = "data.txt")
+bugs.data(data, dir = getwd(), digits = 5, data.file = "data.txt",
+          envir = parent.frame())
 }
 \arguments{
   \item{data}{either a named list (names corresponding to variable names
@@ -17,6 +18,8 @@ bugs.data(data, dir = getwd(), digits = 5, data.file = "data.txt")
   \item{digits}{number of significant digits used for \pkg{WinBUGS}
     input, see \code{\link{formatC}}}
   \item{data.file}{name for the file R writes the data into.}
+  \item{envir}{the environment in which to look up \code{data} when it
+    gives the names of the data objects; by default the caller's}
 }
 
 \value{The name of \code{data.file} is returned and as a side effect, 

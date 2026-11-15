@@ -89,7 +89,7 @@
     data_is_file <- length(data) == 1 && is.vector(data) && is.character(data) &&
       (regexpr("\\.txt$", data) > 0)
     if (!data_is_file) {
-      bugs.data.file <- bugs.data(data, dir = getwd(), digits)
+      bugs.data.file <- bugs.data(data, dir = getwd(), digits, envir = parent.frame())
     } else {
       if (inTempDir && all(basename(data) == data)) {
         try(file.copy(file.path(savedWD, data), data, overwrite = TRUE))
