@@ -67,7 +67,7 @@ openbugs <- function(data, inits, parameters.to.save, model.file="model.txt",
   BRugs::samplesSetThin(nThin)
   ## set the adaptive phases
 
-## We do no longer have any Registry.txt file availabe,
+## We do no longer have any Registry.txt file available,
 ## hence not resetting the adaptive phase any more.
 ## People should move to BRugs directly.
 #  adaptivelines <- scan(system.file("OpenBUGS", "Bugs", "Rsrc",

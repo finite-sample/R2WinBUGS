@@ -23,7 +23,7 @@
     be attached will be deleted. If \code{NA} (the default) and an
     interactive session is running, a dialog box asks the user whether
     masking objects should be deleted.  In non-interactive mode,
-    behaviour is identical to \code{overwrite=FALSE}, i.e. nothing will
+    behavior is identical to \code{overwrite=FALSE}, i.e. nothing will
     be deleted.}
   \item{name}{The name of the environment where \code{x} will be
     attached / which will be detached.}

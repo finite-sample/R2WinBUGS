@@ -4,7 +4,7 @@ as.mcmc.list.bugs <- function(x, ...)
     if(!inherits(x, "bugs")) 
         stop("Method as.mcmc.list.bugs() is only intended for bugs objects.")
     if(dim(x$sims.array)[2] != x$n.chains)
-        stop("Inconsistancy in bug object regarding the number of chains.")
+        stop("Inconsistency in bug object regarding the number of chains.")
     mclis <- vector("list", x$n.chains)
     strt <- x$n.burnin + 1
     end <- x$n.iter

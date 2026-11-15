@@ -1,0 +1,6 @@
+[codespell]
+# Binary vignette figures, the bibliography (quoted titles keep their
+# original spelling), and BibTeX style and class files.
+skip = *.pdf,*.gz,*.bib,*.bst,*.cls,*.sty
+# "burnin" is the standard MCMC term and part of the n.burnin argument name.
+ignore-words-list = burnin

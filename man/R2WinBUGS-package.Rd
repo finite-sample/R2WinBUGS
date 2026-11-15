@@ -8,7 +8,7 @@
 
 \description{
 
-\pkg{R2WinBUGS} package provides possiblity to call a \pkg{BUGS} model,
+\pkg{R2WinBUGS} package provides possibility to call a \pkg{BUGS} model,
 summarize inferences and convergence in a table and graph, and save the
 simulations in arrays for easy access in \R / S-PLUS. In S-PLUS, the
 \pkg{OpenBUGS} functionality and the windows emulation functionality is

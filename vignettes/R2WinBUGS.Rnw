@@ -99,7 +99,7 @@ For other packages and projects on spatial statistics
 related to \R{}, follow the link to ``\R{} spatial projects'' at CRAN.
 
 In this paper, we give two examples, involving educational testing experiments in schools (cf.~Section~\ref{School}),
-and incidence of childhood leukaemia depending on benzene emissions (cf.~Section~\ref{Leukaemia}). Details on the
+and incidence of childhood leukemia depending on benzene emissions (cf.~Section~\ref{Leukemia}). Details on the
 functions of \RW{} are given in Section~\ref{Programming}. These functions automatically write the data and a
 script in a format readable by \WinBUGS{} for processing in batch mode, and call \WinBUGS{} from \R{}. After the
 \WinBUGS{} process has finished, it is possible either to read the resulting data into \R{} by the package itself
@@ -128,8 +128,8 @@ These are calculated by an analysis of covariance adjustment appropriate for a c
 \citep{Rubin:1981}. This example was analyzed using a hierarchical normal model in \cite{Rubin:1981} and
 \citeauthor{Gelman:2003} (\citeyear{Gelman:2003}, Section 5.5).
 
-\subsection{Leukaemia registration data}\label{Leukaemia}
-Spatial data usually arises on different, non-nesting spatial scales. One example is childhood leukaemia
+\subsection{Leukemia registration data}\label{Leukemia}
+Spatial data usually arises on different, non-nesting spatial scales. One example is childhood leukemia
 registration data analyzed by \cite{Best;Cockings;Bennett;Wakefield;Elliot:2001}
 using ecologic regression. Data are given for Greater London bounded by the M25 orbital motorway.
 %% Revision 2005-01-10 start
@@ -138,32 +138,32 @@ to illustrate
 alternative calls to the \verb+bugs()+ function and output analysis using the \pkg{coda} package.
 %% Revision 2005-01-10 end
 
-The observed number of leukaemia cases among children under 15 years old is given at ward level. Census wards are
+The observed number of leukemia cases among children under 15 years old is given at ward level. Census wards are
 administrative areas containing approximately 5000 to 10\,000 people. Central London is divided into 873 wards. The
-number of incident cases of leukaemia in children is available from 1985 until 1996 from the Office of National
+number of incident cases of leukemia in children is available from 1985 until 1996 from the Office of National
 Statistics and the Thames Cancer Registry. A plot of these numbers is given in Figure~\ref{observed}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.85\textwidth]{countssw}
-\caption{\label{observed}Observed number of cases of childhood leukaemia in 1985--1996}
+\caption{\label{observed}Observed number of cases of childhood leukemia in 1985--1996}
 \end{center}
 \end{figure}
 
 Additionally, the number of expected cases (cf.~Fig.~\ref{expected}) is calculated on the same
-resolution using population numbers for different age-sex-strata and the national leukaemia
+resolution using population numbers for different age-sex-strata and the national leukemia
 rate for the corresponding strata, for details see \cite{Best;Cockings;Bennett;Wakefield;Elliot:2001}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.85\textwidth]{expectedsw}
-\caption{\label{expected}Expected number of cases of childhood leukaemia in 1985--1996}%, as obtained from a simple demographic model}
+\caption{\label{expected}Expected number of cases of childhood leukemia in 1985--1996}%, as obtained from a simple demographic model}
 \end{center}
 \end{figure}
 
-It is assumed that benzene emissions have an effect on the incidence rate of leukaemia. Benzene emission rates are
+It is assumed that benzene emissions have an effect on the incidence rate of leukemia. Benzene emission rates are
 available in tonnes per year from an atmospheric emissions inventory for London
-\citep{Buckingham;Clewley;Hutchinson;Sadler;Shah:1997} produced by the London Research Centre. They are provided
+\citep{Buckingham;Clewley;Hutchinson;Sadler;Shah:1997} produced by the London Research Centre. They are provided % codespell:ignore
 at 1km $\times$ 1km grid cells, giving 2132 grid cells in total.
 Their spatial distribution is shown in Figure~\ref{benzene}.
 
@@ -207,7 +207,7 @@ In principle, it is a wrapper for several other functions called therein step by
         calls \WinBUGS{}, and runs it in batch mode with \file{script.txt}.
     \item \verb+bugs.sims()+ is only called if the argument \verb+codaPkg+ has been set to \verb+FALSE+ (the default).
         Otherwise \verb+bugs()+ returns the filenames of stored data. These can, for example,
-        be imported by package \pkg{coda} (see the example in Section~\ref{Leukaemia2}, page~\pageref{codaexample}),
+        be imported by package \pkg{coda} (see the example in Section~\ref{Leukemia2}, page~\pageref{codaexample}),
         which provides functions for convergence diagnostics,
         calculation of Monte Carlo estimates, trace plots, and so forth.
 
@@ -234,7 +234,7 @@ it is possible to specify \verb+data = "data.txt"+.
 One will usually want to supply initial values.
 This can be done either in the form of a function \verb+inits()+ that creates these values, so that
 different chains can be automatically initialized at different points (see Section \ref{School2}), or by specifying them
-directly (see Section \ref{Leukaemia2}).
+directly (see Section \ref{Leukemia2}).
 If \verb+inits()+ is not specified,
 \verb+bugs()+ just uses the starting values created by \WinBUGS{}; but in practice \WinBUGS{} can crash when
 reasonable initial values are not specified, and so we recommend constructing a simple \verb+inits()+ function to
@@ -418,8 +418,8 @@ output into scalar, vector, and arrays of parameters, in addition to storing the
 
 For the interpretation of these results see \citeauthor{Gelman:2003} (\citeyear{Gelman:2003}, Section 5.5).
 
-\subsection{Leukaemia registration data}\label{Leukaemia2}
-The leukaemia registration data (see Section \ref{Leukaemia}) are used to show data modeling and output reading
+\subsection{Leukemia registration data}\label{Leukemia2}
+The leukemia registration data (see Section \ref{Leukemia}) are used to show data modeling and output reading
 into \R{} using the \pkg{coda} package. A simple model for these data looks as follows:
 \begin{Code}
 model{
@@ -444,7 +444,7 @@ model{
         }
     }
 \end{Code}
-Here \verb+count+ denotes the number of observed incidences of childhood leukaemia in ward~\verb+i+. These are
+Here \verb+count+ denotes the number of observed incidences of childhood leukemia in ward~\verb+i+. These are
 assumed to be Poisson distributed with mean \verb+lambda+ depending on the number of expected cases \verb+expect+
 in ward \verb+i+ and an area-specific risk rate \verb+p+. For calculation of this area specific risk rate we use
 an intercept \verb+beta.0+ and a term depending on the weighted sum of benzene emissions \verb+benz+ in each grid
@@ -455,8 +455,8 @@ In \R{} we can define all these data and then initialize the model. The data nee
 \begin{description}
 \item[\tt{benzbar}:]  arithmetic mean of all benzene values,
 \item[\tt{benz}:]     a vector containing benzene emissions of all 2132 grid cells,
-\item[\tt{expect}:]   expected number of cases of childhood leukaemia in each of the 873 wards,
-\item[\tt{count}:]    observed number of childhood leukaemia in these wards,
+\item[\tt{expect}:]   expected number of cases of childhood leukemia in each of the 873 wards,
+\item[\tt{count}:]    observed number of childhood leukemia in these wards,
 \item[\tt{gamma}:]    a $2132\times 873$ matrix containing the amount of area each grid cell and each ward have in common,
 \item[\tt{J}:]        total number of grid cells, i.e.~2132, and
 \item[\tt{I}:]        total number of ward cells, i.e.~873.

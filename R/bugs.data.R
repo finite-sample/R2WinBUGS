@@ -37,7 +37,7 @@ if(is.R()){
 
 "writeDatafileS4" <- 
 #
-# Writes to file "towhere" text defining a list containing "DATA" in a form compatable with WinBUGS.
+# Writes to file "towhere" text defining a list containing "DATA" in a form compatible with WinBUGS.
 # Required arguments:
 # DATA - either a data frame or else a list consisting of any combination of scalars, vectors, arrays or data frames (but not lists).
 #   If a list, all list elements that are not data.frames must be named. Names of data.frames in DATA are ignored.
@@ -201,7 +201,7 @@ function(x)
         # Making sure that periods are in mantissa...
         init <- substring(x[pplusind], 1, pplus[
             pplusind, 1] - 1)
-        #...preceeding exponent
+        #...preceding exponent
         pper <- regMatchPos(init, "\\.")
         pperind <- apply(pper, 1, function(y)
         (all(is.na(y))))
@@ -221,7 +221,7 @@ function(x)
         # Making sure that periods are in mantissa...
         init <- substring(x[pminusind], 1, pminus[
             pminusind, 1] - 1)
-        #...preceeding exponent
+        #...preceding exponent
         pper <- regMatchPos(init, "\\.")
         pperind <- apply(pper, 1, function(y)
         (all(is.na(y))))

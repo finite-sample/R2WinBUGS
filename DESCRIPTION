@@ -48,3 +48,4 @@ Author: Andrew Gelman [aut],
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 URL: https://github.com/finite-sample/R2WinBUGS
 BugReports: https://github.com/finite-sample/R2WinBUGS/issues
+Language: en-US
