@@ -44,7 +44,7 @@ Metropolis algorithm \citep{Metropolis;Rosenbluth;Rosenbluth;Teller;Teller:1953}
 to generate a Markov chain by sampling from full conditional
 distributions.
 The \WinBUGS{} software is available for free
-at \url{https://www.mrc-bsu.cam.ac.uk/software/bugs-project}.
+at \url{https://www.medschl.cam.ac.uk/institutions/mrc-bsu/software-mrc-biostatistics-unit}.
 An introduction to MCMC methods is given in \cite{Gilks;Richardson;Spiegelhalter:1996}.
 
 Using \WinBUGS{}, the user must specify the model to run, and to load data and initial values for a specified

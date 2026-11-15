@@ -1,5 +1,22 @@
 # R2WinBUGS (development version)
 
+## Repository and documentation
+
+- The package now lives at <https://github.com/finite-sample/R2WinBUGS>, with
+  a README and a pkgdown site at <https://finite-sample.github.io/R2WinBUGS/>.
+- The change log moved from `inst/NEWS` to this `NEWS.md`, one section per
+  release.
+- The vignette and the code use US English (`Language: en-US`).
+
+## Internal
+
+- The R code is restyled to the tidyverse style guide. A parse-tree comparison
+  of every file before and after shows the restyle changes no code.
+- The unreachable S-PLUS implementation of the data writer in `bugs.data.R` is
+  removed (`is.R()` has returned `TRUE` since 2.1-22.1).
+- Small cleanups with no effect on valid input: `&&` in `if()` conditions,
+  unused variables and dead commented-out code removed.
+
 # R2WinBUGS 2.1-24
 
 - conv.par() no longer stops with "missing value where TRUE/FALSE needed"
