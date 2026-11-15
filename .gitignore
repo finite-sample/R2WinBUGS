@@ -7,3 +7,5 @@ inst/doc
 # pkgdown output. Disposable local build product; CI builds and
 # publishes the definitive site.
 /docs/
+tests/testthat/_problems/
+tests/testthat/testthat-problems.rds

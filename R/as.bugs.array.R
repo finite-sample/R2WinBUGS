@@ -18,6 +18,13 @@ as.bugs.array <- function(sims.array, model.file = NULL, program = NULL,
     parameter.names <- paste("P", 1:n.parameters, sep = "")
     dimnames(sims.array)[[3]] <- parameter.names
   }
+  # The reassembly below fills each parameter's array by position, assuming
+  # BUGS order (last index varying fastest). Sort the columns into that order
+  # first, so draws named in any other order -- column-major, as JAGS and Stan
+  # write them -- still land in the cells their names say.
+  bugs.order <- order_bugs_style(parameter.names)
+  sims.array <- sims.array[, , bugs.order, drop = FALSE]
+  parameter.names <- parameter.names[bugs.order]
   parameters.to.save <- unique(sapply(strsplit(parameter.names, "\\["), "[", 1))
   #
   sims <- matrix(NA, n.sims, n.parameters)

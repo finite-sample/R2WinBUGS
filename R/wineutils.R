@@ -7,7 +7,7 @@ findUnixBinary <- function(x) {
   ## else
 
   ## --- Standard place ---
-  tmp <- paste("/usr/bin", x, sep = "")
+  tmp <- file.path("/usr/bin", x)
   if (file.exists(tmp)) {
     return(tmp)
   }
