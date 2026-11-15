@@ -72,7 +72,7 @@
       rep(
         c(
           "update (", formatC(ceiling(bin), format = "d"), ")\n",
-          # if (!summary.only) ## Hmm, if coda files are not written, we do not know if WinBUGS did not fail
+          # Always written: without coda files there is no way to tell whether WinBUGS failed.
           c("coda (*, '", coda, "')\n")
         ),
         redo

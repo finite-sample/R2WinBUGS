@@ -2,8 +2,9 @@
   function(sims, ...) {
     isDIC <- sims$isDIC
 
-    if (.Device == "windows" ||
-      (.Device == "null device" && options("device") == "windows")) {
+    on_windows_device <- .Device == "windows" ||
+      (.Device == "null device" && options("device") == "windows")
+    if (on_windows_device) {
       cex.names <- .7
       cex.top <- .7
       cex.points <- .7
@@ -19,7 +20,6 @@
     summ <- sims$summary
     sims.array <- sims$sims.array
     n.chains <- sims$n.chains
-    n.parameters <- nrow(summ)
 
     J0 <- unlist(lapply(sims$long.short, length))
     if (isDIC) J0 <- J0[1:(length(J0) - 1)] # don't display deviance summaries
@@ -95,7 +95,7 @@
     #
     # line at zero
     #
-    if (min(p.rng) < 0 & max(p.rng) > 0) {
+    if (min(p.rng) < 0 && max(p.rng) > 0) {
       lines(rep(a, 2), c(0, bottom), lwd = .5, col = "gray")
     }
 
@@ -144,7 +144,8 @@
         }
         lines(interval, rep(ypos[j] - .1 * (m - (n.chains + 1) / 2), 2), lwd = 1, col = m + 1)
         if (n.chains > 1) {
-          points(A + B * (1.5 + min(max(summ[jj[j], "Rhat"], 1), 2)), ypos[j], pch = 20, cex = cex.points)
+          rhat_x <- A + B * (1.5 + min(max(summ[jj[j], "Rhat"], 1), 2))
+          points(rhat_x, ypos[j], pch = 20, cex = cex.points)
         }
       }
     }

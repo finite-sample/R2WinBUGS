@@ -26,7 +26,6 @@
     }
     n.roots <- length(parameters.to.save)
     left.bracket.short <- as.vector(regexpr("[[]", parameters.to.save))
-    right.bracket.short <- as.vector(regexpr("[]]", parameters.to.save))
     root.short <- ifelse(left.bracket.short == -1, parameters.to.save,
       substring(parameters.to.save, 1, left.bracket.short - 1)
     )
@@ -97,7 +96,8 @@
     }
     sims <- sims[sample(n.sims), , drop = FALSE] # scramble (for convenience in analysis)
     sims.list <- summary.mean <- summary.sd <- summary.median <- vector(n.roots, mode = "list")
-    names(sims.list) <- names(summary.mean) <- names(summary.sd) <- names(summary.median) <- root.short
+    names(sims.list) <- names(summary.mean) <- root.short
+    names(summary.sd) <- names(summary.median) <- root.short
     for (j in 1:n.roots) {
       if (length.short[j] == 1) {
         sims.list[[j]] <- sims[, long.short[[j]]]

@@ -4,7 +4,8 @@ attach.all <- function(x, overwrite = NA, name = "attach.all") {
     if (!any(rem)) overwrite <- FALSE
     rem <- names(x)[rem]
     if (is.na(overwrite)) {
-      question <- paste("The following objects in .GlobalEnv will mask\nobjects in the attached database:\n",
+      question <- paste(
+        "The following objects in .GlobalEnv will mask\nobjects in the attached database:\n",
         paste(rem, collapse = ", "),
         "\nRemove these objects from .GlobalEnv?",
         sep = ""

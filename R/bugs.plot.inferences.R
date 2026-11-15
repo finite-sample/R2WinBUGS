@@ -1,7 +1,8 @@
 "bugs.plot.inferences" <-
   function(sims, display.parallel, ...) {
-    if (.Device == "windows" ||
-      (.Device == "null device" && options("device") == "windows")) {
+    on_windows_device <- .Device == "windows" ||
+      (.Device == "null device" && options("device") == "windows")
+    if (on_windows_device) {
       cex.names <- .7
       cex.axis <- .6
       cex.tiny <- .4
@@ -79,7 +80,7 @@
       #
       # plot a line at zero (if zero is in the range of the mini-plot)
       #
-      if (min(p.rng) < 0 & max(p.rng) > 0) {
+      if (min(p.rng) < 0 && max(p.rng) > 0) {
         lines(A + B * spacing * c(0, J + 1), rep(a, 2), lwd = .5, col = "gray")
       }
 
@@ -102,7 +103,6 @@
         } else {
           lines(A + B * spacing * rep(j, 2), a + b * i80[j, ], lwd = .5)
           for (m in 1:n.chains) {
-            #        points (A+B*spacing*j, a + b*med[j], pch=20, cex=cex.points)
             points(A + B * spacing * j, a + b * med.chains[j, m],
               pch = 20, cex = cex.points,
               col = m + 1
@@ -117,11 +117,13 @@
               text(A + B * spacing * j, -k - height / 2 - .05 - num.height * (m - 1), index0,
                 cex = cex.tiny
               )
-            } else if (index0 != indexes.short[[k]][[j - 1]][m] &
-              (index0 %% (floor(log10(index0) + 1)) == 0)) {
-              text(A + B * spacing * j, -k - height / 2 - .05 - num.height * (m - 1), index0,
-                cex = cex.tiny
-              )
+            } else {
+              index_changed <- index0 != indexes.short[[k]][[j - 1]][m]
+              if (index_changed && (index0 %% (floor(log10(index0) + 1)) == 0)) {
+                text(A + B * spacing * j, -k - height / 2 - .05 - num.height * (m - 1), index0,
+                  cex = cex.tiny
+                )
+              }
             }
           }
         }

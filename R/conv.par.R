@@ -52,10 +52,9 @@
       # continuing simulations forever) has two components:  an estimate and
       # an approx. 97.5% upper bound.
       #
-      # confshrink = sqrt(postvar/W),
-      #     multiplied by sqrt(df/(df-2)) as an adjustment for the
-      ###      CHANGED TO sqrt((df+3)/(df+1))
-      #     width of the t-interval with df degrees of freedom.
+      # The shrink factor is the square root of postvar over W, multiplied by
+      # sqrt((df + 3) / (df + 1)) -- originally sqrt(df / (df - 2)) -- as an
+      # adjustment for the width of the t-interval with df degrees of freedom.
       #
       # postvar/W = (n-1)/n + (1+1/m)(1/n)(B/W); we approximate the sampling dist.
       # of (B/W) by an F distribution, with degrees of freedom estimated

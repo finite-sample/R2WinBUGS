@@ -59,8 +59,9 @@ openbugs <- function(
   if (missing(inits) || is.null(inits)) {
     BRugs::modelGenInits()
   } else {
-    if (is.list(inits) || is.function(inits) || (is.character(inits) &&
-      !any(file.exists(inits)))) {
+    inits_need_writing <- is.list(inits) || is.function(inits) ||
+      (is.character(inits) && !any(file.exists(inits)))
+    if (inits_need_writing) {
       inits <- BRugs::bugsInits(
         inits = inits, numChains = numChains,
         digits = digits
@@ -78,18 +79,11 @@ openbugs <- function(
   ## We do no longer have any Registry.txt file available,
   ## hence not resetting the adaptive phase any more.
   ## People should move to BRugs directly.
-  #  adaptivelines <- scan(system.file("OpenBUGS", "Bugs", "Rsrc",
-  #                                    "Registry.txt", package="BRugs"),
-  #                        what="character", quiet = TRUE)
-  #  factories <- sub(".adaptivePhase", "",
-  #                   adaptivelines[grep("adaptivePhase",adaptivelines)])
-  #  sapply(factories, BRugs::modelSetAP, max(0, nBurnin-1))
   if (getOption("BRugsVerbose")) {
     cat("Sampling has been started ...\n")
     flush.console()
   }
   BRugs::modelUpdate(nBurnin, overRelax = over.relax)
-  ## BRugs::samplesSetThin(nThin)
   if (DIC) {
     BRugs::dicSet()
     on.exit(BRugs::dicClear(), add = TRUE)

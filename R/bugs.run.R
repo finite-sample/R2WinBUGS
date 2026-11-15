@@ -21,7 +21,8 @@
     } else {
       .fileCopy <- splus.file.copy
     }
-    on.exit(try(.fileCopy(file.path(bugs.directory, "System/Rsrc/Registry_Rsave.odc"),
+    on.exit(try(.fileCopy(
+      file.path(bugs.directory, "System/Rsrc/Registry_Rsave.odc"),
       file.path(bugs.directory, "System/Rsrc/Registry.odc"),
       overwrite = TRUE
     )))
@@ -59,6 +60,9 @@
       tmp <- scan("coda1.txt", character(), sep = "\n")
     }
     if (length(grep("BUGS did not run correctly", tmp)) > 0) {
-      stop("Look at the log file and\ntry again with 'debug=TRUE' to figure out what went wrong within Bugs.")
+      stop(
+        "Look at the log file and\ntry again with 'debug=TRUE' ",
+        "to figure out what went wrong within Bugs."
+      )
     }
   }

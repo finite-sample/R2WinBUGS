@@ -19,8 +19,9 @@
       on.exit(setwd(savedWD))
     }
     program <- match.arg(program)
-    if (missing(bugs.directory) &&
-      !is.null(bugs.dir <- getOption("R2WinBUGS.bugs.directory"))) { # requested by Jouni Kerman
+    # The option was requested by Jouni Kerman.
+    bugs.dir <- getOption("R2WinBUGS.bugs.directory")
+    if (missing(bugs.directory) && !is.null(bugs.dir)) {
       bugs.directory <- bugs.dir
     }
     if (program %in% c("openbugs", "OpenBUGS", "OpenBugs")) {
@@ -85,8 +86,9 @@
     if (file.info(model.file)$isdir) {
       stop(paste(model.file, "is a directory, but a file is required."))
     }
-    if (!(length(data) == 1 && is.vector(data) && is.character(data) &&
-      (regexpr("\\.txt$", data) > 0))) {
+    data_is_file <- length(data) == 1 && is.vector(data) && is.character(data) &&
+      (regexpr("\\.txt$", data) > 0)
+    if (!data_is_file) {
       bugs.data.file <- bugs.data(data, dir = getwd(), digits)
     } else {
       if (inTempDir && all(basename(data) == data)) {
@@ -120,7 +122,9 @@
     ## Model files with extension ".bug" need to be renamed to ".txt"
     if (!length(grep("\\.txt$", tolower(model.file)))) {
       new.model.file <- paste(basename(model.file), ".txt", sep = "")
-      if (!is.null(working.directory)) new.model.file <- file.path(working.directory, new.model.file)
+      if (!is.null(working.directory)) {
+        new.model.file <- file.path(working.directory, new.model.file)
+      }
       file.copy(model.file, new.model.file, overwrite = TRUE)
       on.exit(try(file.remove(new.model.file)), add = TRUE)
     } else {

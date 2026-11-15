@@ -30,8 +30,6 @@
         )
       }
     }
-    datalist.tofile <- paste("list(", paste(unlist(datalist.string),
-      collapse = ", "
-    ), ")", sep = "")
+    datalist.tofile <- paste0("list(", paste(unlist(datalist.string), collapse = ", "), ")")
     datalist.tofile
   }

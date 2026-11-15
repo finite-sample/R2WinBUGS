@@ -29,7 +29,8 @@ replaceScientificNotationR <- function(bmodel, digits = 5) {
         if (as.character(bmodel[[i]]) %in% c(":", "[", "[[")) {
           return(bmodel)
         }
-        if ((typeof(bmodel[[i]]) %in% c("double", "integer")) && ((abs(bmodel[[i]]) < 1e-3) || (abs(bmodel[[i]]) > 1e+4))) {
+        is_number <- typeof(bmodel[[i]]) %in% c("double", "integer")
+        if (is_number && ((abs(bmodel[[i]]) < 1e-3) || (abs(bmodel[[i]]) > 1e+4))) {
           counter <- get("rSNRidCounter", envir = env) + 1
           assign("rSNRidCounter", counter, envir = env)
           id <- paste("rSNRid", counter, sep = "")

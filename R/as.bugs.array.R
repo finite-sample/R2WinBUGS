@@ -30,7 +30,6 @@ as.bugs.array <- function(sims.array, model.file = NULL, program = NULL,
   }
   n.roots <- length(parameters.to.save)
   left.bracket.short <- as.vector(regexpr("[[]", parameters.to.save))
-  right.bracket.short <- as.vector(regexpr("[]]", parameters.to.save))
   root.short <- ifelse(left.bracket.short == -1, parameters.to.save,
     substring(parameters.to.save, 1, left.bracket.short - 1)
   )
@@ -48,7 +47,9 @@ as.bugs.array <- function(sims.array, model.file = NULL, program = NULL,
       dimension.short[j] <- length(indexes.long[[long.short[[j]][1]]])
       n.indexes.short[[j]] <- numeric(dimension.short[j])
       for (k in 1:dimension.short[j]) {
-        n.indexes.short[[j]][k] <- length(unique(unlist(lapply(indexes.long[long.short[[j]]], .subset, k))))
+        n.indexes.short[[j]][k] <- length(unique(unlist(
+          lapply(indexes.long[long.short[[j]]], .subset, k)
+        )))
       }
       length.short[j] <- prod(n.indexes.short[[j]])
       ### bug reported by S. McKay Curtis on February 22, 2010, we cannot check that safely:
@@ -92,7 +93,8 @@ as.bugs.array <- function(sims.array, model.file = NULL, program = NULL,
   sims.list <- summary.mean <- summary.sd <- summary.median <- vector(n.roots,
     mode = "list"
   )
-  names(sims.list) <- names(summary.mean) <- names(summary.sd) <- names(summary.median) <- root.short
+  names(sims.list) <- names(summary.mean) <- root.short
+  names(summary.sd) <- names(summary.median) <- root.short
   for (j in 1:n.roots) {
     if (length.short[j] == 1) {
       sims.list[[j]] <- sims[, long.short[[j]]]
