@@ -9,5 +9,8 @@ on:
 jobs:
   coverage:
     uses: gojiplus/r-canon/.github/workflows/reusable-coverage.yml@v2
+    with:
+      # BRugs, in Suggests, is archived on CRAN and cannot be installed.
+      extra-packages: BRugs=?ignore
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

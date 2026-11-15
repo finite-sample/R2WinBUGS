@@ -12,3 +12,6 @@ permissions:
 jobs:
   lint:
     uses: gojiplus/r-canon/.github/workflows/reusable-lint.yml@v2
+    with:
+      # BRugs, in Suggests, is archived on CRAN and cannot be installed.
+      extra-packages: BRugs=?ignore
