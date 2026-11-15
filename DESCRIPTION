@@ -39,7 +39,6 @@ SystemRequirements: OpenBugs for functions bugs() and openbugs() or
         WinBUGS 1.4 for function bugs()
 License: GPL-2
 NeedsCompilation: no
-Packaged: 2026-02-23 13:51:10 UTC; ligges
 Author: Andrew Gelman [aut],
   Sibylle Sturtz [aut],
   Uwe Ligges [cre, aut],
@@ -47,5 +46,3 @@ Author: Andrew Gelman [aut],
   Jouni Kerman [ctb],
   Insightful Corp. [ctb] (Port to S-PLUS)
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
-Repository: CRAN
-Date/Publication: 2026-02-23 17:00:24 UTC
