@@ -20,3 +20,7 @@ jobs:
       pages: write
       id-token: write
     uses: gojiplus/r-canon/.github/workflows/reusable-pkgdown.yml@v2
+    with:
+      # BRugs (Suggests, needed only by openbugs()) is archived on CRAN, so pak
+      # cannot resolve it; without this the site build fails before it starts.
+      extra-packages: "any::pkgdown, local::., BRugs=?ignore"
